@@ -1,0 +1,95 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<title>Our Story</title>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<style type="text/css">
+		@font-face {
+			font-family: digit;
+			src: url('digital-7_mono.ttf') format("truetype");
+		}
+	</style>
+	<link href="css/default.css" type="text/css" rel="stylesheet">
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/garden.js"></script>
+    <script type="text/javascript" src="js/functions.js"></script>
+</head>
+
+<body>
+	<embed src="chongbai.mp3" autostart="true" loop="true" width="0" height="0"></embed>
+	<div id="mainDiv">
+		<div id="content">
+			<div id="code">
+				<span class="comments">/**</span><br />
+				<span class="space"/><span class="comments">* We are both 80s if it's a joke</span><br />
+				<span class="space"/><span class="comments">* so I write some code to celebrate whatever it is.</span><br />
+				<span class="space"/><span class="comments">*/</span><br />
+				Boy i = <span class="keyword">new</span> Boy(<span class="string">"fanl"</span>);<br />
+				Girl u = <span class="keyword">new</span> Girl(<span class="string">"junyu"</span>);<br />
+				<span class="comments">// I like playing computer games.</span><br />
+				i.like(games);<br />
+				<span class="comments">// U are good at reading books and sharing it to others.</span><br />
+				u.goodat(reading);<br />
+				<span class="comments">// May 1, 2017, I told you I love you. Actually I do like Mayday because of their songs.</span><br />
+				i.love(u);<br />
+				<span class="comments">// Luckily, you accepted and became my girlfriend eversince (not too long, even short).</span><br />
+				u.accepted();<br />
+				<span class="comments">// Since then, I miss u every day.</span><br />
+				i.miss(u);<br />
+				<span class="comments">// Suddenly I feels ability of expression is quite important.</span><br />
+				i.sickof(myEnglishlevel);<br />
+				<span class="comments">// So I am ganna stop right here, I mean words.</span><br />
+			</div>
+			<div id="loveHeart">
+				<canvas id="garden"></canvas>
+				<div id="words">
+					<div id="messages">
+						Junyu, I have known you for
+						<div id="elapseClock"></div>
+					</div>
+					<div id="loveu">
+						Not convincing, but I love U.<br/>
+						<div class="signature">- fanl</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="copyright">
+			copyisnotright, but copy is quite useful.
+		</div>
+	</div>
+	<script type="text/javascript">
+		var offsetX = $("#loveHeart").width() / 2;
+		var offsetY = $("#loveHeart").height() / 2 - 55;
+		var together = new Date();
+		together.setFullYear(2017, 2, 26);
+		together.setHours(18);
+		together.setMinutes(0);
+		together.setSeconds(0);
+		together.setMilliseconds(0);
+		
+		if (!document.createElement('canvas').getContext) {
+			var msg = document.createElement("div");
+			msg.id = "errorMsg";
+			msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+"; 
+			document.body.appendChild(msg);
+			$("#code").css("display", "none")
+			$("#copyright").css("position", "absolute");
+			$("#copyright").css("bottom", "10px");
+		    document.execCommand("stop");
+		} else {
+			setTimeout(function () {
+				startHeartAnimation();
+			}, 5000);
+
+			timeElapse(together);
+			setInterval(function () {
+				timeElapse(together);
+			}, 500);
+
+			adjustCodePosition();
+			$("#code").typewriter();
+		}
+	</script>
+</body>
+</html>
